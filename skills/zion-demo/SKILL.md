@@ -78,7 +78,7 @@ Do **not** write feature code yet. Propose a short plan:
 1. **数据** — tables / fields / relations (reuse vs create)
 2. **页面** — which pages, each page's job
 3. **逻辑** — which Actionflows vs Agents, inputs/outputs
-4. **体验** — visual direction (mood / palette / type), first-viewport impact, key UX flows (empty / loading / error / success), 2–3 intentional motions
+4. **体验** — visual direction (mood / palette / type), first-viewport impact, key UX flows (empty / loading / error / success), record actions (create / edit / delete where lists exist), 2–3 intentional motions
 
 If requirements were omitted, ask what to demo before proposing the plan.  
 Wait for user confirmation before implementing.
@@ -93,6 +93,7 @@ Implement in order: **数据 → 页面 → 逻辑**. UI quality is part of “�
 - One job per section; reduce clutter (no pill clusters, stat-strip spam, or decorative card walls).
 - Define CSS variables for the chosen direction; avoid default AI looks (purple-on-white, cream+terracotta serif, broadsheet hairlines).
 - Real UX: loading / empty / error / success states; obvious primary action; mobile-usable layout.
+- **Record / “我的记录” lists are interactive by default** — not read-only. Include create (or add), edit, and delete. Delete needs a confirm step; after mutate, refresh list and show success/error feedback. Skip an action only if the user explicitly says so or permissions truly block it — say so in the plan.
 - Ship at least 2–3 intentional motions (entrance, state change, or feedback) — presence, not noise.
 - Keep scaffold plumbing (Vite proxy, Apollo). Health page can stay for diagnostics; business routes should own the demo story.
 
@@ -105,7 +106,15 @@ Also:
 
 ## Kickoff lines (for the human)
 
-Full:
+Minimal (requirements optional):
+
+```text
+用 zion-demo skill。连上 Zion 项目 {{PROJECT_EX_ID}}。
+
+先摸清现状，再按数据、页面、逻辑、体验出结构方案，我确认后再动手。页面要有视觉冲击感，UX 走通。
+```
+
+With requirements:
 
 ```text
 用 zion-demo skill。连上 Zion 项目 {{PROJECT_EX_ID}}。
@@ -118,4 +127,4 @@ Full:
 
 Spoken:
 
-> 用 zion-demo，连这个 Zion 项目，摸清现状。我们要做 {{DEMO_REQUIREMENTS}}——先出结构方案，页面要好看有冲击，我点头后再做。
+> 用 zion-demo，连这个 Zion 项目，摸清现状。先出结构方案，页面要好看有冲击，我点头后再做。
