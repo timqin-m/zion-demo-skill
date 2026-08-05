@@ -3,9 +3,10 @@ name: zion-demo
 description: >-
   Run a live Zion plugin demo from the Git scaffold: clone plugin-templete,
   connect a Zion project, inventory schema/agents/actionflows, propose a
-  data→pages→logic structure plan, then build after confirmation. Use when
-  starting a Zion demo, swapping projectExId, or the user mentions
-  plugin-templete, Zion 演示脚手架, or 现场演示 Zion plugin.
+  data→pages→logic→experience structure plan, then build after confirmation
+  with strong visual impact and UX. Use when starting a Zion demo, swapping
+  projectExId, or the user mentions plugin-templete, Zion 演示脚手架, or
+  现场演示 Zion plugin.
 ---
 
 # Zion plugin demo
@@ -23,6 +24,8 @@ Need from the user (ask only if missing):
 - `projectExId` — Zion project external id
 - Demo requirements — what to build this session
 
+Optional: brand / visual direction. If omitted, pick one clear direction that fits the domain — do not ship a generic gray admin look.
+
 ## Workflow
 
 Copy and track:
@@ -33,7 +36,7 @@ Demo progress:
 - [ ] 2. Connect Zion project
 - [ ] 3. Inventory (tables / agents / AFs)
 - [ ] 4. Structure plan → wait for OK
-- [ ] 5. Build: data → pages → logic
+- [ ] 5. Build: data → pages → logic (+ visual/UX)
 ```
 
 ### 1. Clone scaffold
@@ -70,14 +73,25 @@ Do **not** write feature code yet. Propose a short plan:
 1. **数据** — tables / fields / relations (reuse vs create)
 2. **页面** — which pages, each page's job
 3. **逻辑** — which Actionflows vs Agents, inputs/outputs
+4. **体验** — visual direction (mood / palette / type), first-viewport impact, key UX flows (empty / loading / error / success), 2–3 intentional motions
 
 Wait for user confirmation before implementing.
 
 ### 5. Build after OK
 
-Implement in order: **数据 → 页面 → 逻辑**.
+Implement in order: **数据 → 页面 → 逻辑**. UI quality is part of “页面”, not a later polish pass.
 
-- Keep scaffold plumbing (Vite proxy, Apollo, Health page); add session pages as needed.
+**Visual / UX bar (required for demo pages):**
+
+- First viewport should feel like a product, not a debug panel — clear hierarchy, atmosphere (gradient / texture / imagery when it fits), expressive typography (not default Inter/Roboto/Arial/system-only).
+- One job per section; reduce clutter (no pill clusters, stat-strip spam, or decorative card walls).
+- Define CSS variables for the chosen direction; avoid default AI looks (purple-on-white, cream+terracotta serif, broadsheet hairlines).
+- Real UX: loading / empty / error / success states; obvious primary action; mobile-usable layout.
+- Ship at least 2–3 intentional motions (entrance, state change, or feedback) — presence, not noise.
+- Keep scaffold plumbing (Vite proxy, Apollo). Health page can stay for diagnostics; business routes should own the demo story.
+
+Also:
+
 - Verify each slice (runtime query / AF / agent / `npm run dev`).
 - On blockers, say where it stuck (auth / schema / permissions / binding / runtime) — do not fake success.
 - Do not invent schema paths or ids.
@@ -93,9 +107,9 @@ Full:
 我们要做的是：
 {{DEMO_REQUIREMENTS}}
 
-先摸清现状，再按数据、页面、逻辑出结构方案，我确认后再动手。
+先摸清现状，再按数据、页面、逻辑、体验出结构方案，我确认后再动手。页面要有视觉冲击感，UX 走通。
 ```
 
 Spoken:
 
-> 用 zion-demo，连这个 Zion 项目，摸清现状。我们要做 {{DEMO_REQUIREMENTS}}——先出结构方案，我点头后再做。
+> 用 zion-demo，连这个 Zion 项目，摸清现状。我们要做 {{DEMO_REQUIREMENTS}}——先出结构方案，页面要好看有冲击，我点头后再做。
