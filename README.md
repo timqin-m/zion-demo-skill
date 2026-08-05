@@ -1,6 +1,6 @@
 # zion-demo-skill
 
-Cursor / agent skill for live Zion plugin demos.
+Coding-agent skill for live Zion plugin demos (Cursor, Claude Code, Codex, and others that load Agent Skills).
 
 ## Layout
 
@@ -16,13 +16,7 @@ skills/
 npx skills add timqin-m/zion-demo-skill
 ```
 
-Or copy into Cursor:
-
-```bash
-mkdir -p ~/.cursor/skills/zion-demo
-curl -fsSL https://raw.githubusercontent.com/timqin-m/zion-demo-skill/main/skills/zion-demo/SKILL.md \
-  -o ~/.cursor/skills/zion-demo/SKILL.md
-```
+Or copy `skills/zion-demo/SKILL.md` into your agent's skills directory (for example `~/.cursor/skills/zion-demo/`, `~/.claude/skills/zion-demo/`, or whatever path your tool uses).
 
 ## Related
 
