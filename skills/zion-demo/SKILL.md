@@ -19,12 +19,17 @@ Also load and follow the `zion-platform` skill / Zion MCP for any Zion work.
 
 ## Inputs
 
-Need from the user (ask only if missing):
+Required (ask only if missing):
 
 - `projectExId` — Zion project external id
-- Demo requirements — what to build this session
 
-Optional: brand / visual direction. If omitted, pick one clear direction that fits the domain — do not ship a generic gray admin look.
+Optional:
+
+- Demo requirements — what to build this session
+- Brand / visual direction
+
+If requirements are omitted, still connect + inventory, then ask what to demo.  
+If visual direction is omitted, pick one clear direction that fits the domain — do not ship a generic gray admin look.
 
 ## Workflow
 
@@ -75,6 +80,7 @@ Do **not** write feature code yet. Propose a short plan:
 3. **逻辑** — which Actionflows vs Agents, inputs/outputs
 4. **体验** — visual direction (mood / palette / type), first-viewport impact, key UX flows (empty / loading / error / success), 2–3 intentional motions
 
+If requirements were omitted, ask what to demo before proposing the plan.  
 Wait for user confirmation before implementing.
 
 ### 5. Build after OK
